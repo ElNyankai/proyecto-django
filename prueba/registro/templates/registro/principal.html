@@ -38,8 +38,15 @@
       {% for alumno in 8A %}
       <tr>
         <td class="text-center">
-          <!-- ✅ CORREGIDO: alt descriptivo en imagen de alumno -->
-          <img src="{{alumno.imagen.url}}" alt="Foto de {{alumno.nombre}}" class="img-media" width="50" height="50" loading="lazy">
+          <picture>
+            <source srcset="{{alumno.imagen.url}}" type="image/webp">
+            <img src="{{alumno.imagen.url}}" 
+                alt="Foto de {{alumno.nombre}}" 
+                class="img-media" 
+                width="50" height="50" 
+                loading="lazy"
+                decoding="async">
+          </picture>
         </td>
         <td class="text-semibold">{{alumno.matricula}}</td>
         <td class="muted">{{alumno.nombre}}</td>

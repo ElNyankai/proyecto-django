@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- ✅ CORREGIDO: Quitado user-scalable=no y maximum-scale=1 -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ✅ AGREGADO: Meta description para SEO -->
+
 <meta name="description" content="Sistema de gestión de alumnos DSM. Consulta, registra y administra información de alumnos.">
 
 <title>{%block titulo%} {%endblock%}</title>
@@ -16,13 +16,13 @@
 <link href="{% static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/icons.css'%}" rel="stylesheet" media="print" onload="this.media='all'" type="text/css">
 
-<!-- ✅ CORREGIDO: http → https en Google Fonts + display=swap -->
+
  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- ✅ CORREGIDO: http → https + jQuery actualizado a 3.7.1 -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
 
@@ -56,7 +56,7 @@
 
 <body>
 
-  <!-- ✅ AGREGADO: skip link para accesibilidad de teclado -->
+  
   <a href="#contenido-principal" class="sr-only sr-only-focusable">Saltar al contenido</a>
 
   <div class="page-container">
@@ -66,7 +66,7 @@
 
       <div class="user-menu dropdown">
         <a href="#">
-          <!-- ✅ CORREGIDO: alt descriptivo en imagen de perfil -->
+          
           <img src="{%block imagen%}{%endblock%}" alt="Imagen de sección actual">
           <div class="user-info">
             {%block tema%}{%endblock%} <span>DSM</span>
@@ -89,7 +89,7 @@
 
   </div>
 
-  <!-- ✅ AGREGADO: <main> con id para el skip link -->
+  
   <main id="contenido-principal" class="page-content">
 
     {%block encabezado%}

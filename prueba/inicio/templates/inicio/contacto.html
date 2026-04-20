@@ -20,14 +20,14 @@
 
 {% block contenido %}
 
-  <!-- ✅ CORREGIDO: Formulario con labels asociados a inputs mediante for/id -->
+  
   <form class="form-horizontal" action="#" method="post" role="form">
     {% csrf_token %}
     <div class="panel panel-default">
       <div class="panel-body">
 
         <div class="form-group">
-          <!-- ✅ for="matricula" asociado a id="matricula" -->
+          
           <label for="matricula" class="col-sm-2 control-label text-right">Matrícula:</label>
           <div class="col-sm-10">
             <input type="text" id="matricula" name="matricula" class="form-control">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-          <!-- ✅ for="nombre" asociado a id="nombre" -->
+          
           <label for="nombre" class="col-sm-2 control-label text-right">Nombre:</label>
           <div class="col-sm-10">
             <input type="text" id="nombre" name="nombre" class="form-control">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-          <!-- ✅ for="carrera" asociado a id="carrera" -->
+          
           <label for="carrera" class="col-sm-2 control-label text-right">Carrera:</label>
           <div class="col-sm-10">
             <select id="carrera" name="carrera" class="select" tabindex="2">
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group">
-          <!-- ✅ CORREGIDO: fieldset+legend para grupo de radio buttons -->
+          
           <fieldset>
             <legend class="col-sm-2 control-label text-right">Turno:</legend>
             <div class="col-sm-10">

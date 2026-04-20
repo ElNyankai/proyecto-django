@@ -2,17 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <!-- ✅ CORREGIDO: Quitado user-scalable=no -->
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- ✅ AGREGADO: Meta description -->
+  
   <meta name="description" content="Página de búsqueda del sistema DSM.">
   <title>Seguridad</title>
 </head>
 <body>
 
-  <!-- ✅ AGREGADO: <main> landmark -->
+  
   <main>
-    <!-- ✅ CORREGIDO: label asociado al input con for e id -->
+    
     <form method="GET">
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre">
@@ -21,7 +21,7 @@
 
     <h1>Resultado: {{ nombre }}</h1>
 
-    <!-- ✅ ELIMINADO: innerHTML con dato de URL (vulnerabilidad XSS) -->
+    
     <!-- El resultado ya se muestra de forma segura con Django template -->
 
   </main>

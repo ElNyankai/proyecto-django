@@ -3,7 +3,6 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ IMPORTANTE: En producción cambia esto por una clave secreta real y pon DEBUG=False
 SECRET_KEY = 'django-insecure-m+t_4$cdm8*awq0$@zx_klgskgk*!q+3#bcu8^+2rt=6tf-*v)'
 
 DEBUG = True
@@ -76,14 +75,12 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# ✅ AGREGADO: Headers de seguridad HTTP para subir Best Practices
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 CSRF_COOKIE_SECURE = False   # ← Cambiar a True cuando uses HTTPS real (producción)
 SESSION_COOKIE_SECURE = False  # ← Cambiar a True cuando uses HTTPS real (producción)
 
-# ✅ AGREGADO: Content Security Policy básica via headers
 # Permite cargar recursos solo de fuentes conocidas
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 

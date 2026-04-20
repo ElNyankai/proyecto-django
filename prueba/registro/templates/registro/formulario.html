@@ -20,14 +20,14 @@
 
 {% block contenido %}
 
-  <!-- ✅ CORREGIDO: method="post" + csrf_token + labels asociados con for/id -->
+  
   <form class="form-horizontal" action="" method="post" role="form">
     {% csrf_token %}
     <div class="panel panel-default">
       <div class="panel-body">
 
         <div class="form-group">
-          <!-- ✅ label for asociado a input id -->
+          
           <label for="matricula" class="col-sm-2 control-label text-right">Matrícula:</label>
           <div class="col-sm-10">
             <input type="text" id="matricula" name="matricula" class="form-control">
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-          <!-- ✅ CORREGIDO: fieldset+legend para radio buttons -->
+          
           <fieldset>
             <legend class="col-sm-2 control-label text-right">Turno:</legend>
             <div class="col-sm-10">

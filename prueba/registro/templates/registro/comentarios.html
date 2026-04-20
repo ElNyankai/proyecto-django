@@ -20,7 +20,7 @@
 
 {% block contenido %}
 
-  <!-- ✅ CORREGIDO: caption + scope en th para accesibilidad -->
+  
   <table class="table table-bordered table-striped">
     <caption>Lista de comentarios de usuarios</caption>
 
@@ -39,7 +39,7 @@
         <td class="muted">{{comentario.usuario}}</td>
         <td class="muted">{{comentario.mensaje}}</td>
         <td class="muted">
-          <!-- ✅ CORREGIDO: texto descriptivo en enlaces (no solo "Editar" genérico) -->
+          
           <a href="{% url 'Editar' comentario.id %}" aria-label="Editar comentario de {{comentario.usuario}}">Editar</a>
         </td>
         <td class="muted">

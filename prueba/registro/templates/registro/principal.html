@@ -2,55 +2,57 @@
 {%block titulo%} PRINCIPAL {%endblock%}
 
 {%block imagen%}
-    {%load static%} 
+    {%load static%}
     {%static 'inicio/images/home.png'%}
 {%endblock%}
 
 {%block tema%} PRINCIPAL {%endblock%}
 
 {%block encabezado%}
-
-
-			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Alumnos
-				    <small>Lista de Alumnos </small></h3>
-				</div>	
-			</div>
-			<!-- /Encabezado-->
-
-		
+  <div class="page-header">
+    <div class="page-title">
+      <h2>Alumnos
+        <small>Lista de Alumnos</small>
+      </h2>
+    </div>
+  </div>
 {%endblock%}
 
-
 {% block contenido %}
-<!--Tabla de Alumnos-->
-<table class="table table-boradered table-striped">
 
-	<thead>
-		<tr>
-			<th>Foto</th>
-			<th>Matricula</th>
-			<th>Nombre</th>
-			<th>Carrera</th>
-			<th>Turno</th>
-		</tr>
-	</thead>	
+  <!-- ✅ CORREGIDO: caption en tabla para accesibilidad -->
+  <table class="table table-bordered table-striped">
+    <caption>Lista de alumnos registrados</caption>
 
-<tbody>
-	{% for alumno in 8A %}
-	<tr>
-		<td class="text-center">
-			<img src="{{alumno.imagen.url}}" alt="" class="img-media">
-		</td>
-		<td class="text-semibold">{{alumno.matricula}}</td>
-		<td class="muted">{{alumno.nombre}}</td>
-		<td class="muted">{{alumno.carrera}}</td>
-		<td class="muted">{{alumno.turno}}</td>
-	</tr>
-	{% endfor %}
-</tbody>
+    <thead>
+      <tr>
+        <th scope="col">Foto</th>
+        <th scope="col">Matrícula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Carrera</th>
+        <th scope="col">Turno</th>
+      </tr>
+    </thead>
 
-</table>	
+    <tbody>
+      {% for alumno in 8A %}
+      <tr>
+        <td class="text-center">
+          <!-- ✅ CORREGIDO: alt descriptivo en imagen de alumno -->
+          <img src="{{alumno.imagen.url}}" alt="Foto de {{alumno.nombre}}" class="img-media" width="50" height="50" loading="lazy">
+        </td>
+        <td class="text-semibold">{{alumno.matricula}}</td>
+        <td class="muted">{{alumno.nombre}}</td>
+        <td class="muted">{{alumno.carrera}}</td>
+        <td class="muted">{{alumno.turno}}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5" class="text-center">No hay alumnos registrados.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
 {%endblock%}

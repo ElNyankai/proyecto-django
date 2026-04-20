@@ -1,84 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<!-- ✅ CORREGIDO: Quitado user-scalable=no y maximum-scale=1 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ✅ AGREGADO: Meta description -->
+<meta name="description" content="Sistema de gestión de alumnos DSM. Consulta, registra y administra información de alumnos.">
 
+<title>{%block titulo%}{%endblock%}</title>
 
-<title>{%block titulo%} {%endblock%}</title>
-
-{% load static %}<!--Para cargar archivos estaticos-->
+{% load static %}
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/icons.css'%}" rel="stylesheet" type="text/css">
 
+<!-- ✅ CORREGIDO: http → https + display=swap -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+<!-- ✅ CORREGIDO: http → https + jQuery 3.7.1 + defer -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/charts/sparkline.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/uniform.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/select2.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputmask.js"></script>
-<script type="text/javascript" src="js/plugins/forms/autosize.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputlimit.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/listbox.js"></script>
-<script type="text/javascript" src="js/plugins/forms/multiselect.js"></script>
-<script type="text/javascript" src="js/plugins/forms/validate.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/tags.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/switch.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.full.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.queue.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/toolbar.js"></script>
-
-<script type="text/javascript" src="js/plugins/interface/daterangepicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fancybox.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/moment.js"></script>
-<script type="text/javascript" src="js/plugins/interface/jgrowl.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/datatables.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/colorpicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/timepicker.min.js"></script>
-
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/charts/sparkline.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uniform.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/select2.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputmask.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/autosize.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputlimit.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/listbox.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/multiselect.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/validate.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/tags.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/switch.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.full.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.queue.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/wysihtml5.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/toolbar.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/daterangepicker.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fancybox.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/moment.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/jgrowl.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/datatables.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/colorpicker.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fullcalendar.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/timepicker.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/bootstrap.min.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'inicio/js/application.js' %}" defer></script>
 
 </head>
 
 <body>
 
-	
+  <!-- ✅ AGREGADO: skip link -->
+  <a href="#contenido-principal" class="sr-only sr-only-focusable">Saltar al contenido</a>
 
- 	<div class="page-container">
+  <div class="page-container">
+    <!-- Barra de menú -->
+    <nav class="sidebar" aria-label="Menú principal">
+      <div class="sidebar-content">
+        <ul class="navigation" role="list">
+          <li><a href="{%url 'principal'%}">Home</a></li>
+          <li><a href="{%url 'contacto' %}">Contáctanos</a></li>
+          <li><a href="{%url 'Formulario' %}">Registrar</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /sidebar -->
+  </div>
 
-
-		<!-- Barra de menú -->
-		<div class="sidebar">
-			<div class="sidebar-content">
-				<!-- Menú de navegación -->
-				<ul class="navigation">
-							<li><a href="{%url 'principal'%}">Home</a></li>
-                            <li><a href="{%url 'contacto' %}">Contactanos</a></li>
-                            <li><a href="{%url 'Formulario' %}">Registrar</a></li>	
-				</ul>
-				<!-- /Fin menú -->
-			</div>
-		</div>
-		<!-- /sidebar -->	
-		<!-- /Contenido Principal-->
-	</div>
-
-     {% block contenido %}<!--Template Tag-->
-    <!--block sirve para indicar que colocaremos un bloque de contenido
-    a través de nuestra variable content-->
+  <!-- ✅ AGREGADO: <main> con id -->
+  <main id="contenido-principal">
+    {% block contenido %}
     {% endblock %}
+  </main>
+
 </body>
 </html>

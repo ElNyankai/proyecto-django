@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang='es'>
-    <head>
-        <meta charset='UTF-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Seguridad</title>
-    <body>
-        <form method='GET'>
-            Nombre:
-            <input type='text' name='nombre'>
-            <input type='submit' value='Buscar'>
-        </form>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- ✅ CORREGIDO: Quitado user-scalable=no -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ✅ AGREGADO: Meta description -->
+  <meta name="description" content="Página de búsqueda del sistema DSM.">
+  <title>Seguridad</title>
+</head>
+<body>
 
-        <h2>Resultado: {{ nombre | safe }}</h2>
+  <!-- ✅ AGREGADO: <main> landmark -->
+  <main>
+    <!-- ✅ CORREGIDO: label asociado al input con for e id -->
+    <form method="GET">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre">
+      <input type="submit" value="Buscar">
+    </form>
 
-        <!-- Inicio de busqueda -->
-        <script type="application/javascript">
-            var busqueda = new
-            URLSearchParams(document.location.search);
-            if (busqueda.has("nombre")){
-                document.getElementById("resultado").innerHTML
-                = "Resultado: " + busqueda.get("nombre")
-            }
-        </script>
-        <!-- Fin de paguina -->
-    </body>
+    <h1>Resultado: {{ nombre }}</h1>
+
+    <!-- ✅ ELIMINADO: innerHTML con dato de URL (vulnerabilidad XSS) -->
+    <!-- El resultado ya se muestra de forma segura con Django template -->
+
+  </main>
+
+</body>
 </html>

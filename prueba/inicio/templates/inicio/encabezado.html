@@ -3,70 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="description" content="Sistema de gestión de alumnos DSM. Consulta, registra y administra información de alumnos.">
 
 <title>{%block titulo%} {%endblock%}</title>
 
 {% load static %}
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link href="{% static 'inicio/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/londinium-theme.css'%}" rel="stylesheet" media="print" onload="this.media='all'" type="text/css">
 <link href="{% static 'inicio/css/styles.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'inicio/css/icons.css'%}" rel="stylesheet" media="print" onload="this.media='all'" type="text/css">
 
-
- <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
-
-<script type="text/javascript" src="{% static 'inicio/js/plugins/charts/sparkline.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uniform.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/select2.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputmask.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/autosize.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputlimit.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/listbox.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/multiselect.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/validate.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/tags.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/switch.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.full.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.queue.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/wysihtml5.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/toolbar.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/daterangepicker.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fancybox.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/moment.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/jgrowl.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/datatables.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/colorpicker.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fullcalendar.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/plugins/interface/timepicker.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/bootstrap.min.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'inicio/js/application.js' %}" defer></script>
-
 </head>
 
 <body>
 
-  
   <a href="#contenido-principal" class="sr-only sr-only-focusable">Saltar al contenido</a>
 
   <div class="page-container">
 
-    <!-- Barra de menú -->
     <nav class="sidebar" aria-label="Menú principal">
 
       <div class="user-menu dropdown">
         <a href="#">
-          
           <img src="{%block imagen%}{%endblock%}" alt="Imagen de sección actual">
           <div class="user-info">
             {%block tema%}{%endblock%} <span>DSM</span>
@@ -75,7 +39,6 @@
       </div>
 
       <div class="sidebar-content">
-        <!-- Menú de navegación -->
         <ul class="navigation" role="list">
           <li><a href="{%url 'principal'%}">Home</a></li>
           <li><a href="{%url 'contacto' %}">Contáctanos</a></li>
@@ -85,17 +48,14 @@
         </ul>
       </div>
     </nav>
-    <!-- /sidebar -->
 
   </div>
 
-  
   <main id="contenido-principal" class="page-content">
 
     {%block encabezado%}
     {%endblock%}
 
-    <!-- Barra de navegación -->
     <nav class="breadcrumb-line" aria-label="Ruta de navegación">
       <ul class="breadcrumb">
         <li>
@@ -114,6 +74,34 @@
     {% endblock %}
 
   </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/charts/sparkline.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uniform.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/select2.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputmask.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/autosize.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/inputlimit.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/listbox.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/multiselect.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/validate.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/tags.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/switch.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.full.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/uploader/plupload.queue.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/wysihtml5.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/forms/wysihtml5/toolbar.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/daterangepicker.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fancybox.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/moment.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/jgrowl.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/datatables.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/colorpicker.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/fullcalendar.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/plugins/interface/timepicker.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/bootstrap.min.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'inicio/js/application.js' %}" defer></script>
 
 </body>
 </html>
